@@ -29,6 +29,9 @@ import face_recognition
 from ultralytics import YOLO
 from PIL import Image, ImageDraw, ImageFont
 
+from resource_tracking_tool import ResourceMonitor
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="YOLOv8 + ByteTrack 人脸检测与识别 (支持中文显示与视频保存)")
     parser.add_argument("--known_dir", type=str, required=True,
@@ -49,6 +52,7 @@ def parse_args():
                         help="处理后视频保存路径（mp4格式）")
     return parser.parse_args()
 
+
 def load_known_faces(known_dir):
     known_encodings, known_names = [], []
     for fname in os.listdir(known_dir):
@@ -66,6 +70,7 @@ def load_known_faces(known_dir):
             print(f"警告: 无法在 {fname} 中找到人脸，已跳过")
     return known_encodings, known_names
 
+
 def annotate_frame(frame, boxes, names, font):
     img_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
     draw = ImageDraw.Draw(img_pil)
@@ -77,8 +82,10 @@ def annotate_frame(frame, boxes, names, font):
         draw.text(text_pos, name, font=font, fill=color)
     return cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR)
 
+
 def main():
     args = parse_args()
+    rm = ResourceMonitor()
     known_encs, known_names = load_known_faces(args.known_dir)
     # 加载字体
     if args.font_path and os.path.isfile(args.font_path):
@@ -128,6 +135,7 @@ def main():
                 names.append(name)
             out = annotate_frame(frame, boxes, names, font)
             cv2.imshow('Face Recognition', out)
+            rm.record()
             if writer is not None:
                 writer.write(out)
             if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -156,9 +164,10 @@ def main():
         print(f"输出视频保存到 {args.output}")
 
     process_stream(src, writer)
-
+    rm.print_summary()
     if writer:
         writer.release()
+
 
 if __name__ == '__main__':
     main()
