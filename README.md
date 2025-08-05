@@ -29,3 +29,7 @@ python face_tracking.py  --known_dir known_faces  --source 0  --model yolov8n-fa
   ![show.gif](img/show.gif)
   ![result_cpu.png](img/result_cpu.png)
   ![result_mem.png](img/result_mem.png)
+
+## 仓库
+
+- https://github.com/JiJiBo/YoloTrackingYouFace.git
