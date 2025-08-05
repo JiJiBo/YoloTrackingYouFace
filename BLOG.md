@@ -4,23 +4,28 @@
 
 本项目实现了结合YOLOv8人脸检测模型和ByteTrack多目标追踪算法的人脸实时检测、跟踪与识别功能，并能够利用静态人脸图库进行身份识别。通过对摄像头实时视频流进行处理，可高效实现人脸识别与标注，支持中文显示。
 
+### 运行环境
+
+- macOS-15.3.2-arm64-arm-64bit
+- Python 3.10.18 (main, Jun 5 2025, 08:37:47) [Clang 14.0.6 ]
+
 ## 功能说明
 
 1. **加载已知人脸图片**：
 
-   * 从指定文件夹加载图片，图片文件名即为人物姓名。
-   * 提取并缓存人脸特征编码。
+    * 从指定文件夹加载图片，图片文件名即为人物姓名。
+    * 提取并缓存人脸特征编码。
 
 2. **实时人脸检测与追踪**：
 
-   * 使用YOLOv8进行人脸检测。
-   * 使用ByteTrack进行多目标追踪，准确跟踪人脸运动轨迹。
+    * 使用YOLOv8进行人脸检测。
+    * 使用ByteTrack进行多目标追踪，准确跟踪人脸运动轨迹。
 
 3. **人脸识别与标记**：
 
-   * 对每个追踪到的人脸进行特征编码。
-   * 与缓存的已知人脸特征进行比对识别。
-   * 已识别的人脸标注姓名，未识别的标注为“Unknown”并用高亮框标出。
+    * 对每个追踪到的人脸进行特征编码。
+    * 与缓存的已知人脸特征进行比对识别。
+    * 已识别的人脸标注姓名，未识别的标注为“Unknown”并用高亮框标出。
 
 ## 环境安装
 
@@ -32,7 +37,8 @@ pip install ultralytics opencv-python face_recognition pillow
 
 ## 模型下载
 
-* YOLOv8人脸检测模型（轻量版）：[yolov8n-face-lindevs.pt](https://github.com/lindevs/yolov8-face/releases/latest/download/yolov8n-face-lindevs.pt)
+*
+YOLOv8人脸检测模型（轻量版）：[yolov8n-face-lindevs.pt](https://github.com/lindevs/yolov8-face/releases/latest/download/yolov8n-face-lindevs.pt)
 
 ## 使用方法
 

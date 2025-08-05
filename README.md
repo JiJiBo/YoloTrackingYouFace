@@ -30,6 +30,11 @@ python face_tracking.py  --known_dir known_faces  --source 0  --model yolov8n-fa
   ![result_cpu.png](img/result_cpu.png)
   ![result_mem.png](img/result_mem.png)
 
+### 运行环境
+
+- macOS-15.3.2-arm64-arm-64bit
+- Python 3.10.18 (main, Jun 5 2025, 08:37:47) [Clang 14.0.6 ]
+
 ## 仓库
 
 - https://github.com/JiJiBo/YoloTrackingYouFace.git
