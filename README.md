@@ -21,4 +21,7 @@ python face_tracking.py  --known_dir known_faces  --source 0  --model yolov8n-fa
 - https://github.com/lindevs/yolov8-face/releases/latest/download/yolov8n-face-lindevs.pt
 
 ## demo
+
 ![show.gif](img/show.gif)
+![result_cpu.png](img/result_cpu.png)
+![result_mem.png](img/result_mem.png)
