@@ -9,7 +9,7 @@
     4. 在画面中标注已识别姓名（支持中文），对于不在已知列表的人脸，用“Unknown”并高亮框出
 
 ```shell
-pip install ultralytics opencv-python
+pip install ultralytics opencv-python face_recognition pillow
 ```
 
 ```shell
