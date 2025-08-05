@@ -19,3 +19,6 @@ python face_tracking.py  --known_dir known_faces  --source 0  --model yolov8n-fa
 ## 模型地址
 
 - https://github.com/lindevs/yolov8-face/releases/latest/download/yolov8n-face-lindevs.pt
+
+## demo
+![show.gif](img/show.gif)
