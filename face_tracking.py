@@ -165,6 +165,7 @@ def main():
 
     process_stream(src, writer)
     rm.print_summary()
+    rm.plot(show=False, save_path="./img/result")
     if writer:
         writer.release()
 
