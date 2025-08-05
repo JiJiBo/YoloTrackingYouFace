@@ -22,6 +22,10 @@ python face_tracking.py  --known_dir known_faces  --source 0  --model yolov8n-fa
 
 ## demo
 
-![show.gif](img/show.gif)
-![result_cpu.png](img/result_cpu.png)
-![result_mem.png](img/result_mem.png)
+### === 资源使用统计 ===
+
+- CPU (%) —— 最大: 151.4, 最小: 57.1, 平均: 137.08 (样本: 286)
+- Memory (MB) —— 最大: 1067.45, 最小: 455.27, 平均: 753.04 (样本: 286)
+  ![show.gif](img/show.gif)
+  ![result_cpu.png](img/result_cpu.png)
+  ![result_mem.png](img/result_mem.png)
